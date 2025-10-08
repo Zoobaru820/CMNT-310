@@ -1,5 +1,8 @@
 <?php
 
+define("PAGE_HOME", "index.php");
+define("PAGE_ACCOUNT", "account.php");
+
 //todo" remove this when auth is ready
 function getLoggedInPage () {
     $return = "";
@@ -17,11 +20,12 @@ function getEnd() {
 function getTop($title="My Page",) {
 	$return = ""; 
 	$return .= "<!DOCTYPE html>\n";
-$return .= "<html lang=\"en\">\n";
-$return .= "<head>\n";
-$return .= "<title>" . $title . "</title>\n";
-$return .= "</head>\n";
-$return .= "<body>\n";
-return $return;
+	$return .= "<html lang=\"en\">\n";
+	$return .= "<head>\n";
+	$return .= "<link rel=\"stylesheet\" href=\"swtyle.css\">\n";
+	$return .= "<title>" . $title . "</title>\n";
+	$return .= "</head>\n";
+	$return .= "<body>\n";
+	return $return;
 }
 
