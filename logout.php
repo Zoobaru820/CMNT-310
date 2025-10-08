@@ -11,4 +11,6 @@ if(isset($_SESSION['loggedIn'])) {
 $_SESSION = array();
 session_write_close();
 
-die(header("Location: " . HOME));
+die(header("Location: " . PAGE_HOME));
+
+<script src="script.js"></script>

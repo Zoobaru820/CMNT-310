@@ -1,23 +1,29 @@
 <?php
 session_start();
-
-//check if authenticated
-if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
-    die(header("Location: index.php"));
-  
-}
-
-//requires
 require_once("functions.php");
 
-//gather information/backend data
-$username = isset($_SESSION['username']) ? $_SESSION['username'] : "zoe";
+// Check if user is authenticated
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    header("Location: index.php");
+    exit();
+}
 
-//build page
-print getTop();
+// Gather info
+$username = $_SESSION['username'] ?? "zoe";
 
-print "<h1>Welcome to your account page</h1>\n";
+// Build page
+print getTop("Account Page");
+
+// Display content
+print "<h1>Welcome to your account page, " . htmlspecialchars($username) . "!</h1>\n";
 print "<p>You are successfully logged in.</p>\n";
 
-//display output
+print "<form action='logout.php' method='POST'>\n";
+print "    <button type='submit' class='button'>Logout</button>\n";
+print "</form>\n";
+
+print "<p><a href='customer.php'>Go to Customer Portal</a></p>\n";
+
+// Display end of page
 print getEnd();
+?>

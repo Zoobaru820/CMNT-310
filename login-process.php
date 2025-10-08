@@ -14,7 +14,7 @@ if (!isset($_POST['password']) || empty($_POST['password'])) {
 if ($_POST['username'] == "zoe") {
 	$_SESSION['loggedIn'] = true;
 	$_SESSION['username'] = $_POST['username']; //store username
-	die(header("Location: account.php"));
+	die(header("Location: customer.php"));
 } else {
 	$_SESSION['errors'][] = "User not found or password incorrect";
 }
@@ -22,4 +22,6 @@ if ($_POST['username'] == "zoe") {
 if (count($_SESSION['errors']) > 0) {
 	die(header("Location: index.php"));
 }
+
+<script src="script.js"></script>
 

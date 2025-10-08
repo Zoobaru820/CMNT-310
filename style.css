@@ -1,0 +1,11 @@
+ h1 {
+    font-size: 24px;
+    color: #84B6F0;
+}
+
+button {
+    background-color: #F0C884;
+    color: black;
+    border: sandybrown;
+    font-size: 1rem;
+}

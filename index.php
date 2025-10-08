@@ -23,3 +23,5 @@ print "<input type='submit' name='submit_form'>\n";
 print "</form>\n";
 
 print getEnd();
+
+<script src="script.js"></script>
